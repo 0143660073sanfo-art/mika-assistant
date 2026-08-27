@@ -1,0 +1,29 @@
+﻿node_modules/
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Fichiers temporaires
+tmp/
+temp/
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Éditeurs
+.vscode/
+.idea/
+
+# Bases de données locales
+*.sqlite
+*.sqlite3
+
+# Secrets / certificats
+*.pem
+*.key
+*.crt

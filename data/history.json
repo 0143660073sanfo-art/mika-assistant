@@ -1,0 +1,686 @@
+[
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mon projet est Mika Assistant WhatsApp",
+    "date": "2026-07-07T11:54:24.969Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "D'accord 😊 Je retiens que ton projet est Mika Assistant WhatsApp.",
+    "date": "2026-07-07T11:54:25.041Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Quel est mon projet",
+    "date": "2026-07-07T11:56:37.241Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Ton projet est Mika Assistant WhatsApp 🤖",
+    "date": "2026-07-07T11:56:37.316Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mon projet est Mika Assistant",
+    "date": "2026-07-07T12:31:44.945Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "D'accord 😊 Je retiens que ton projet est Mika Assistant.",
+    "date": "2026-07-07T12:31:45.003Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Quel est mon projet",
+    "date": "2026-07-07T12:32:00.695Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Ton projet est Mika Assistant 🤖",
+    "date": "2026-07-07T12:32:00.697Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mon objectif est cr�er une IA personnelle",
+    "date": "2026-07-07T16:40:14.385Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T16:40:14.451Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mon objectif est cr�er une IA personnelle",
+    "date": "2026-07-07T16:46:37.790Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T16:46:37.851Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mon objectif est cr�er une IA personnelle",
+    "date": "2026-07-07T16:52:48.624Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T16:52:48.676Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mon objectif est cr�er une IA personnelle",
+    "date": "2026-07-07T17:12:54.851Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T17:12:54.916Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Quel est mon objectif ?",
+    "date": "2026-07-07T17:13:55.090Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T17:13:55.098Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mon objectif est cr�er une IA personnelle",
+    "date": "2026-07-07T17:21:51.275Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T17:21:51.337Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mon objectif est cr�er une IA personnelle",
+    "date": "2026-07-07T17:25:04.082Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T17:25:04.182Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "bonjour",
+    "date": "2026-07-07T17:25:27.537Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Bonjour 👋 Je suis Mika Assistant 🤖",
+    "date": "2026-07-07T17:25:27.546Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mon objectif est cr�er une IA personnelle",
+    "date": "2026-07-07T17:35:16.691Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T17:35:16.748Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Quel est mon objectif ?",
+    "date": "2026-07-07T17:35:38.685Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T17:35:38.698Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mon objectif est cr�er une IA personnelle",
+    "date": "2026-07-07T17:39:43.144Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T17:39:43.548Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mon objectif est cr�er une IA personnelle",
+    "date": "2026-07-07T17:59:35.249Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T17:59:35.413Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mon objectif est cr�er une IA personnelle",
+    "date": "2026-07-07T18:12:53.275Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T18:12:53.398Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mon objectif est cr�er une IA personnelle",
+    "date": "2026-07-07T18:31:19.680Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T18:31:19.942Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mon objectif est cr�er une IA personnelle",
+    "date": "2026-07-07T18:36:22.245Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T18:36:22.320Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mon objectif est cr�er une IA personnelle",
+    "date": "2026-07-07T18:40:59.568Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "D'accord 😊 Je retiens que ton objectif est cr�er une IA personnelle.",
+    "date": "2026-07-07T18:40:59.681Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mon objectif est cr�er une IA personnelle",
+    "date": "2026-07-07T18:45:24.209Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "D'accord 😊 Je retiens que ton objectif est cr�er une IA personnelle.",
+    "date": "2026-07-07T18:45:24.255Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mon objectif est cr�er une IA personnelle",
+    "date": "2026-07-07T19:05:13.553Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "D'accord 😊 Je retiens que ton objectif est cr�er une IA personnelle.",
+    "date": "2026-07-07T19:05:13.887Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Quel est mon objectif ?",
+    "date": "2026-07-07T19:13:01.549Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Ton objectif est Quel est mon objectif ? 🤖",
+    "date": "2026-07-07T19:13:02.970Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Je mappelle Mika",
+    "date": "2026-07-07T20:03:08.537Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Enchanté Mika 😊 Je vais retenir ton prénom.",
+    "date": "2026-07-07T20:03:08.602Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Qui suis-je ?",
+    "date": "2026-07-07T20:03:42.448Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T20:03:42.464Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Qui suis-je ?",
+    "date": "2026-07-07T20:46:30.812Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T20:46:30.860Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Qui suis-je ?",
+    "date": "2026-07-07T20:53:00.517Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T20:53:00.550Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Qui suis-je ?",
+    "date": "2026-07-07T21:17:37.162Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T21:17:37.251Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Qui suis-je ?",
+    "date": "2026-07-07T21:20:24.156Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T21:20:24.215Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Qui suis-je ?",
+    "date": "2026-07-07T21:29:48.266Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T21:29:48.320Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Qui suis-je ?",
+    "date": "2026-07-07T22:11:16.693Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T22:11:16.756Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "bonjour",
+    "date": "2026-07-07T22:21:23.621Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Bonjour 👋 Je suis Mika Assistant 🤖",
+    "date": "2026-07-07T22:21:23.691Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Je mappelle Mika",
+    "date": "2026-07-07T22:24:02.120Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Enchanté Mika 😊 Je vais retenir ton prénom.",
+    "date": "2026-07-07T22:24:02.244Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Quel est mon nom ?",
+    "date": "2026-07-07T22:24:40.130Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T22:24:40.201Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Je mappelle Mika",
+    "date": "2026-07-07T23:51:11.103Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Enchanté Mika 😊 Je vais retenir ton prénom.",
+    "date": "2026-07-07T23:51:11.214Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Quel est mon nom ?",
+    "date": "2026-07-07T23:51:55.858Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-07T23:51:55.902Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Je mappelle Mika",
+    "date": "2026-07-08T00:10:31.872Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Enchanté Mika 😊 Je vais retenir ton prénom.",
+    "date": "2026-07-08T00:10:32.033Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Quel est mon nom ?",
+    "date": "2026-07-08T00:12:26.870Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-08T00:12:26.930Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Je mappelle Mika",
+    "date": "2026-07-08T00:16:23.625Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Enchanté Mika 😊 Je vais retenir ton prénom.",
+    "date": "2026-07-08T00:16:23.718Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Quel est mon nom ?",
+    "date": "2026-07-08T00:17:01.628Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-08T00:17:01.705Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Quel est mon nom ?",
+    "date": "2026-07-08T00:35:43.741Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-08T00:35:43.847Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Quel est mon nom ?",
+    "date": "2026-07-08T10:04:46.657Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Tu t'appelles Mika 😊",
+    "date": "2026-07-08T10:04:46.711Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Quel est mon nom ?",
+    "date": "2026-07-08T10:25:08.408Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Tu t'appelles Mika 😊",
+    "date": "2026-07-08T10:25:08.460Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Quel est mon nom ?",
+    "date": "2026-07-08T10:25:33.999Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Tu t'appelles Mika 😊",
+    "date": "2026-07-08T10:25:34.004Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Que sais-tu sur moi ?",
+    "date": "2026-07-08T11:14:14.950Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "👤 Nom : Mika\n🚀 Projet : Mika Assistant\n🎯 Objectif : créer une IA personnelle\n📚 Études : Inconnues\n💻 Compétences : Inconnues\n❤️ Préférences : Inconnues",
+    "date": "2026-07-08T11:14:15.029Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "J'�tudie en terminale scientifique",
+    "date": "2026-07-08T11:15:50.145Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-08T11:15:50.153Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mes comp�tences sont JavaScript, informatique et bureautique",
+    "date": "2026-07-08T11:16:06.302Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-08T11:16:06.306Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Que sais-tu sur moi ?",
+    "date": "2026-07-08T11:16:29.946Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "👤 Nom : Mika\n🚀 Projet : Mika Assistant\n🎯 Objectif : créer une IA personnelle\n📚 Études : Inconnues\n💻 Compétences : Inconnues\n❤️ Préférences : Inconnues",
+    "date": "2026-07-08T11:16:29.955Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Que sais-tu sur moi ?",
+    "date": "2026-07-08T12:07:32.790Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "👤 Nom : Mika\n🚀 Projet : Mika Assistant\n🎯 Objectif : créer une IA personnelle\n📚 Études : Inconnues\n💻 Compétences : Inconnues\n❤️ Préférences : Inconnues",
+    "date": "2026-07-08T12:07:32.869Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Je fais des etudes en terminale scientifique",
+    "date": "2026-07-08T13:44:10.730Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-08T13:44:10.791Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mes comp�tences sont JavaScript, informatique et bureautique",
+    "date": "2026-07-08T13:44:41.509Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-08T13:44:41.515Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Que sais-tu sur moi ?",
+    "date": "2026-07-08T13:44:57.332Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "👤 Nom : Mika\n🚀 Projet : Mika Assistant\n🎯 Objectif : créer une IA personnelle\n📚 Études : en terminale scientifique\n💻 Compétences : Inconnues\n❤️ Préférences : Inconnues",
+    "date": "2026-07-08T13:44:57.347Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mes competences sont JavaScript, informatique et bureautique",
+    "date": "2026-07-08T13:51:10.604Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-08T13:51:10.648Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Que sais-tu sur moi ?",
+    "date": "2026-07-08T13:51:33.039Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "👤 Nom : Mika\n🚀 Projet : Mika Assistant\n🎯 Objectif : créer une IA personnelle\n📚 Études : en terminale scientifique\n💻 Compétences : JavaScript, informatique et bureautique\n❤️ Préférences : Inconnues",
+    "date": "2026-07-08T13:51:33.043Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "Mon test m�moire fonctionne",
+    "date": "2026-07-08T14:00:03.142Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-08T14:00:03.199Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "J'aime le football",
+    "date": "2026-07-08T14:00:59.207Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-08T14:00:59.225Z"
+  },
+  {
+    "userId": "default",
+    "role": "user",
+    "content": "J'aime le football",
+    "date": "2026-07-08T14:05:37.741Z"
+  },
+  {
+    "userId": "default",
+    "role": "assistant",
+    "content": "Je suis encore en apprentissage, mais je progresse 🧠",
+    "date": "2026-07-08T14:05:37.815Z"
+  }
+]

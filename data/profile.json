@@ -1,0 +1,14 @@
+{
+  "project": "Mika Assistant",
+  "objectif": "créer une IA personnelle",
+  "name": "Mika",
+  "names": [
+    "Le briseur",
+    "Le charmeur",
+    "Le chouchou des Nanas",
+    "Mika"
+  ],
+  "studies": "en terminale scientifique",
+  "skills": "JavaScript, informatique et bureautique",
+  "preferences": "le football"
+}
