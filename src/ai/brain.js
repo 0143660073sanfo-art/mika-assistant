@@ -1,172 +1,233 @@
-console.log("🔥 BRAIN CHARGÉ");
+console.log("🔥 BRAIN CHARGE");
 
 const { saveMemory } = require("../memory/memory");
-const { setProfile, getProfile } = require("../memory/profile");
+const { getProfile } = require("../memory/profile");
 const { extractMemory } = require("./memoryExtractor");
+
 function think(message, userId = "default") {
-const text = message.toLowerCase();
-console.log("MESSAGE REÇU :", message);
-console.log("TEXTE ANALYSÉ :", text);
-console.log("VERSION BRAIN OBJECTIF ACTIVE");
-const memoryResult = extractMemory(message);
-console.log("MEMOIRE DETECTEE :", memoryResult);
-  // Retenir le nom
-if ((text.includes("m'appelle") || text.includes("mappelle")) && !text.includes("comment")) {
 
-    const name = message.split(/m'appelle|mappelle/i)[1].trim();
+  if (!message || typeof message !== "string") {
+    return "Je n'ai pas compris ton message.";
+  }
 
-    saveMemory(userId, "name", name);
-    setProfile("name", name);
+  const text = message.toLowerCase().trim();
 
-    return `Enchanté ${name} 😊 Je vais retenir ton nom.`;
-}
+  console.log("=================================");
+  console.log("🧠 BRAIN - NOUVEAU MESSAGE");
+  console.log("MESSAGE :", message);
+  console.log("UTILISATEUR :", userId);
+  console.log("=================================");
 
-  // Demander le nom et surnoms
-if (
-  text.includes("comment je m'appelle") ||
-  text.includes("quel est mon nom") ||
-  text.includes("qui suis-je") ||
-  (text.includes("comment") && text.includes("appelle"))
-) {
+  // =========================================
+  // 1. EXTRACTION DE LA MÉMOIRE
+  // =========================================
 
-  console.log("BLOC IDENTITE ACTIVE");
-  const name = getProfile("name");
+  const memoryResult = extractMemory(message);
 
-console.log("NAME TROUVÉ :", name);
+  console.log("🧠 MÉMOIRE DÉTECTÉE :", memoryResult);
 
-if (name) {
-  return `Tu t'appelles ${name} 😊`;
-}
-  return "Je ne connais pas encore ton nom.";
-}
-// Retenir un projet
-if (text.includes("mon projet est")) {
+  // =========================================
+  // 2. RETENIR LE NOM
+  // =========================================
 
-    console.log("TEST PROJET DETECTE");
+  if (
+    (text.includes("m'appelle") || text.includes("mappelle")) &&
+    !text.includes("comment")
+  ) {
 
-    const project = message.split(/mon projet est/i)[1].trim();
+    const match = message.match(/m['’]?appelle\s+(.+)/i);
 
-    setProfile("project", project);
+    if (match) {
 
-    return `D'accord 😊 Je retiens que ton projet est ${project}.`;
-}
-// Retenir un objectif
-if (text.includes("mon objectif est")) {
+      const name = match[1].trim();
 
-    console.log("TEST OBJECTIF DETECTE");
+      saveMemory(userId, "name", name);
 
-    const objectif = message.split(/mon objectif est/i)[1].trim();
+      return `Enchanté ${name} 😊 Je vais retenir ton nom.`;
+    }
+  }
 
-    setProfile("objectif", objectif);
+  // =========================================
+  // 3. DEMANDER LE NOM
+  // =========================================
 
-    return `D'accord 😊 Je retiens que ton objectif est ${objectif}.`;
-}
+  if (
+    text.includes("comment je m'appelle") ||
+    text.includes("quel est mon nom") ||
+    text.includes("qui suis-je")
+  ) {
 
+    const name = getProfile("name");
 
-// Question sur l'objectif
-if (text.includes("quel est mon objectif") || text.includes("c'est quoi mon objectif")) {
+    if (name) {
+      return `Tu t'appelles ${name} 😊`;
+    }
+
+    return "Je ne connais pas encore ton nom.";
+  }
+
+  // =========================================
+  // 4. DEMANDER LE PROJET
+  // =========================================
+
+  if (
+    text.includes("quel est mon projet") ||
+    text.includes("c'est quoi mon projet")
+  ) {
+
+    const project = getProfile("project");
+
+    if (project) {
+      return `Ton projet est ${project} 🚀`;
+    }
+
+    return "Je ne connais pas encore ton projet.";
+  }
+
+  // =========================================
+  // 5. DEMANDER L'OBJECTIF
+  // =========================================
+
+  if (
+    text.includes("quel est mon objectif") ||
+    text.includes("c'est quoi mon objectif")
+  ) {
 
     const objectif = getProfile("objectif");
 
     if (objectif) {
-      return `Ton objectif est ${objectif} 🤖`;
+      return `Ton objectif est ${objectif} 🎯`;
     }
 
     return "Je ne connais pas encore ton objectif.";
-}
-  // Question sur le projet
-if (text.includes("quel est mon projet")) {
-  const project = getProfile("project");
-
-  if (project) {
-    return `Ton projet est ${project} 🤖`;
   }
 
-  return "Je ne connais pas encore ton projet.";
-}
+  // =========================================
+  // 6. DEMANDER LES ÉTUDES
+  // =========================================
 
-// ==========================
-// Question sur les études
-// ==========================
-if (
-  text.includes("qu'est-ce que j'étudie") ||
-  text.includes("quelles sont mes études") ||
-  text.includes("j'étudie quoi") ||
-  text.includes("que j'étudie") ||
-  text.includes("mes études")
-) {
-  const studies = getProfile("studies");
+  if (
+    text.includes("qu'est-ce que j'étudie") ||
+    text.includes("qu'est ce que j'étudie") ||
+    text.includes("quelles sont mes études") ||
+    text.includes("j'étudie quoi") ||
+    text.includes("que j'étudie") ||
+    text.includes("mes études")
+  ) {
 
-  if (studies) {
-    return `Tu étudies ${studies} 📚`;
+    const studies = getProfile("studies");
+
+    if (studies) {
+      return `Tu étudies ${studies} 📚`;
+    }
+
+    return "Je ne connais pas encore tes études.";
   }
 
-  return "Je ne connais pas encore tes études.";
-}
+  // =========================================
+  // 7. DEMANDER LES COMPÉTENCES
+  // =========================================
 
-// ==========================
-// Question sur les compétences
-// ==========================
-if (
-  text.includes("quelles sont mes compétences") ||
-  text.includes("mes compétences")
-) {
-  const skills = getProfile("skills");
+  if (
+    text.includes("quelles sont mes compétences") ||
+    text.includes("quelles sont mes competences") ||
+    text.includes("mes compétences") ||
+    text.includes("mes competences")
+  ) {
 
-  if (skills) {
-    return `Tes compétences sont : ${skills} 💻`;
+    const skills = getProfile("skills");
+
+    if (skills) {
+      return `Tes compétences sont : ${skills} 💻`;
+    }
+
+    return "Je ne connais pas encore tes compétences.";
   }
 
-  return "Je ne connais pas encore tes compétences.";
-}
+  // =========================================
+  // 8. DEMANDER LES PRÉFÉRENCES
+  // =========================================
 
-// ==========================
-// Question sur les préférences
-// ==========================
-if (
-  text.includes("qu'est-ce que j'aime") ||
-  text.includes("ce que j'aime") ||
-  text.includes("mes préférences")
-) {
-  const preferences = getProfile("preferences");
+  if (
+    text.includes("qu'est-ce que j'aime") ||
+    text.includes("qu'est ce que j'aime") ||
+    text.includes("ce que j'aime") ||
+    text.includes("mes préférences") ||
+    text.includes("mes preferences")
+  ) {
 
-  if (preferences) {
-    return `Tu aimes ${preferences} ❤️`;
+    const preferences = getProfile("preferences");
+
+    if (preferences) {
+
+      if (Array.isArray(preferences)) {
+        return `Tu aimes ${preferences.join(", ")} ❤️`;
+      }
+
+      return `Tu aimes ${preferences} ❤️`;
+    }
+
+    return "Je ne connais pas encore tes préférences.";
   }
 
-  return "Je ne connais pas encore tes préférences.";
-}
+  // =========================================
+  // 9. RÉSUMÉ DU PROFIL
+  // =========================================
 
-// ==========================
-// Résumé du profil
-// ==========================
-if (
-  text.includes("que sais-tu sur moi") ||
-  text.includes("résume mon profil") ||
-  text.includes("mon profil")
-) {
+  if (
+    text.includes("que sais-tu sur moi") ||
+    text.includes("que sais tu sur moi") ||
+    text.includes("résume mon profil") ||
+    text.includes("resume mon profil") ||
+    text === "mon profil"
+  ) {
 
-  const name = getProfile("name");
-  const project = getProfile("project");
-  const objectif = getProfile("objectif");
-  const studies = getProfile("studies");
-  const skills = getProfile("skills");
-  const preferences = getProfile("preferences");
+    const name = getProfile("name");
+    const project = getProfile("project");
+    const objectif = getProfile("objectif");
+    const studies = getProfile("studies");
+    const skills = getProfile("skills");
+    const preferences = getProfile("preferences");
 
-  return `👤 Nom : ${name || "Inconnu"}
+    const preferencesText = Array.isArray(preferences)
+      ? preferences.join(", ")
+      : preferences;
+
+    return `👤 Nom : ${name || "Inconnu"}
 🚀 Projet : ${project || "Inconnu"}
 🎯 Objectif : ${objectif || "Inconnu"}
 📚 Études : ${studies || "Inconnues"}
 💻 Compétences : ${skills || "Inconnues"}
-❤️ Préférences : ${preferences || "Inconnues"}`;
+❤️ Préférences : ${preferencesText || "Inconnues"}`;
+  }
+
+  // =========================================
+  // 10. SALUTATIONS
+  // =========================================
+
+  if (
+    text === "bonjour" ||
+    text === "salut" ||
+    text === "hello" ||
+    text === "bonsoir"
+  ) {
+
+    const name = getProfile("name");
+
+    if (name) {
+      return `Bonjour ${name} 👋 Je suis Mika Assistant 🤖`;
+    }
+
+    return "Bonjour 👋 Je suis Mika Assistant 🤖";
+  }
+
+  // =========================================
+  // 11. RÉPONSE PAR DÉFAUT
+  // =========================================
+
+  return "Je suis encore en apprentissage, mais je progresse 🧠🚀";
 }
 
-// Bonjour
-if (text.includes("bonjour") || text.includes("salut")) {
-  return "Bonjour 👋 Je suis Mika Assistant 🤖";
-}
-
-  return "Je suis encore en apprentissage, mais je progresse 🧠";
-}
-
-module.exports = { think };
+module.exports = {
+  think
+};
