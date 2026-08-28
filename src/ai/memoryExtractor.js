@@ -1,117 +1,164 @@
 const { setProfile } = require("../memory/profile");
 
 function extractMemory(message) {
-
   console.log("=== MEMORY EXTRACTOR ACTIF ===");
-  console.log("EXTRACTEUR REÇU :", message);
+  console.log("EXTRACTEUR RECU :", message);
 
-  const text = message.toLowerCase();
-  // Nom et surnoms
-if (text.includes("m'appelle") || text.includes("mappelle")) {
-
-  setProfile("names", [
-    "Le briseur",
-    "Le charmeur",
-    "Le chouchou des Nanas",
-    "Mika"
-  ]);
-
-  console.log("NOMS ENREGISTRES :", [
-    "Le briseur",
-    "Le charmeur",
-    "Le chouchou des Nanas",
-    "Mika"
-  ]);
-
-  return "names";
-}
-
-  // Projet
-  if (text.includes("mon projet")) {
-    const project = message.split(/mon projet/i)[1].trim();
-
-    setProfile("project", project);
-
-    return "project";
+  if (!message || typeof message !== "string") {
+    return null;
   }
 
-// Objectif
-if (text.includes("objectif")) {
+  const text = message.trim();
 
-  const objectif = message
-    .replace(/mon objectif est/i, "")
-    .trim();
+  // =========================
+  // NOM
+  // =========================
 
-  if (objectif) {
-    setProfile("objectif", objectif);
+  const nameMatch = text.match(
+    /(?:je\s+)?m['’]?appelle\s+(.+)/i
+  );
 
-    console.log("OBJECTIF ENREGISTRE :", objectif);
+  if (nameMatch) {
+    const name = nameMatch[1].trim();
 
-    return "objectif";
+    if (name && !name.toLowerCase().includes("comment")) {
+      setProfile("name", name);
+
+      console.log("NOM ENREGISTRE :", name);
+
+      return {
+        type: "name",
+        value: name
+      };
+    }
   }
-}  
-// Études
-if (
-  text.includes("j'étudie") ||
-  text.includes("j'etudie") ||
-  text.includes("je fais des études") ||
-  text.includes("je fais des etudes")
-) {
-  const study = message
-    .replace(/j'étudie en|j'étudie|j'etudie en|j'etudie|je fais des études|je fais des etudes/i, "")
-    .trim();
 
-  if (study) {
-    setProfile("studies", study);
+  // =========================
+  // PROJET
+  // =========================
 
-    console.log("ETUDES ENREGISTREES :", study);
+  const projectMatch = text.match(
+    /mon\s+projet\s+(?:est|c'est)\s+(.+)/i
+  );
 
-    return "studies";
+  if (projectMatch) {
+    const project = projectMatch[1].trim();
+
+    if (project) {
+      setProfile("project", project);
+
+      console.log("PROJET ENREGISTRE :", project);
+
+      return {
+        type: "project",
+        value: project
+      };
+    }
   }
-}
 
+  // =========================
+  // OBJECTIF
+  // =========================
 
-// Compétences
-if (
-  text.includes("mes compétences") ||
-  text.includes("mes competences") ||
-  text.includes("mes comp") ||
-  text.includes("je sais") ||
-  text.includes("je maîtrise") ||
-  text.includes("je maitrise")
-) {
-  const skills = message
-.replace(/mes compétences sont|mes competences sont|mes comp.tences sont|je sais|je maîtrise|je maitrise/i, "")
-    .trim();
+  const objectiveMatch = text.match(
+  /mon\s+objectif\s+(?:est|c'est)\s+(?:de\s+)?(.+)/i
+);
+  if (objectiveMatch) {
+    const objectif = objectiveMatch[1].trim();
 
-  if (skills) {
-    setProfile("skills", skills);
+    if (objectif) {
+      setProfile("objectif", objectif);
 
-    console.log("COMPETENCES ENREGISTREES :", skills);
+      console.log("OBJECTIF ENREGISTRE :", objectif);
 
-    return "skills";
+      return {
+        type: "objectif",
+        value: objectif
+      };
+    }
   }
-}
 
+  // =========================
+  // ETUDES
+  // =========================
 
-// Préférences
-if (text.includes("j'aime") || text.includes("j'aime bien")) {
+  const studiesMatch = text.match(
+    /(?:j['’]étudie(?:\s+en)?|je\s+fais\s+des\s+études(?:\s+en)?)\s+(.+)/i
+  );
 
-  const preference = message
-    .replace(/j'aime bien|j'aime/i, "")
-    .trim();
+  if (studiesMatch) {
+    const studies = studiesMatch[1].trim();
 
-  if (preference) {
-    setProfile("preferences", preference);
+    if (studies) {
+      setProfile("studies", studies);
 
-    console.log("PREFERENCE ENREGISTREE :", preference);
+      console.log("ETUDES ENREGISTREES :", studies);
 
-    return "preferences";
+      return {
+        type: "studies",
+        value: studies
+      };
+    }
   }
-}
+
+  // =========================
+  // COMPETENCES
+  // =========================
+
+  const skillsMatch = text.match(
+    /(?:mes\s+compétences\s+sont|mes\s+competences\s+sont|je\s+sais|je\s+maîtrise|je\s+maitrise)\s+(.+)/i
+  );
+
+  if (skillsMatch) {
+    const skills = skillsMatch[1].trim();
+
+    if (skills) {
+      setProfile("skills", skills);
+
+      console.log("COMPETENCES ENREGISTREES :", skills);
+
+      return {
+        type: "skills",
+        value: skills
+      };
+    }
+  }
+
+  // =========================
+  // PREFERENCES
+  // =========================
+
+  const preferenceMatch = text.match(
+    /j['’]aime(?:\s+bien)?\s+(.+)/i
+  );
+
+  if (preferenceMatch) {
+    const preference = preferenceMatch[1].trim();
+
+    if (preference) {
+      const profile = require("../memory/profile").getFullProfile();
+
+      const preferences = Array.isArray(profile.preferences)
+        ? profile.preferences
+        : [];
+
+      if (!preferences.includes(preference)) {
+        preferences.push(preference);
+      }
+
+      setProfile("preferences", preferences);
+
+      console.log("PREFERENCE ENREGISTREE :", preference);
+
+      return {
+        type: "preference",
+        value: preference
+      };
+    }
+  }
+
   return null;
 }
-
 
 module.exports = {
   extractMemory

@@ -1,31 +1,49 @@
 const fs = require("fs");
 const path = require("path");
 
-const filePath = path.join(__dirname, "../../data/profile.json");
+const dataDir = path.join(__dirname, "../../data");
+const filePath = path.join(dataDir, "profile.json");
 
 const defaultProfile = {
   name: "",
+  names: [],
   project: "",
   objectif: "",
   skills: "",
   studies: "",
-  preferences: ""
+  preferences: []
 };
 
+function ensureDataDirectory() {
+  if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir, { recursive: true });
+  }
+}
+
 function loadProfile() {
+  ensureDataDirectory();
+
   if (!fs.existsSync(filePath)) {
     saveProfile(defaultProfile);
+    return { ...defaultProfile };
   }
 
-  const data = fs.readFileSync(filePath, "utf-8");
-
-  return JSON.parse(data);
+  try {
+    const data = fs.readFileSync(filePath, "utf8");
+    return JSON.parse(data);
+  } catch (error) {
+    console.error("ERREUR LECTURE PROFIL :", error.message);
+    return { ...defaultProfile };
+  }
 }
 
 function saveProfile(profile) {
+  ensureDataDirectory();
+
   fs.writeFileSync(
     filePath,
-    JSON.stringify(profile, null, 2)
+    JSON.stringify(profile, null, 2),
+    "utf8"
   );
 }
 
@@ -35,6 +53,8 @@ function setProfile(key, value) {
   profile[key] = value;
 
   saveProfile(profile);
+
+  console.log(`MEMOIRE PROFIL : ${key} =`, value);
 }
 
 function getProfile(key) {
@@ -43,7 +63,12 @@ function getProfile(key) {
   return profile[key];
 }
 
+function getFullProfile() {
+  return loadProfile();
+}
+
 module.exports = {
   setProfile,
-  getProfile
+  getProfile,
+  getFullProfile
 };

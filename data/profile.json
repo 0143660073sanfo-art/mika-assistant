@@ -8,7 +8,9 @@
     "Le chouchou des Nanas",
     "Mika"
   ],
-  "studies": "en terminale scientifique",
+  "studies": "terminale scientifique",
   "skills": "JavaScript, informatique et bureautique",
-  "preferences": "le football"
+  "preferences": [
+    "le football"
+  ]
 }
