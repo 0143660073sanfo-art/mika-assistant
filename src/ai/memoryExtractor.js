@@ -1,159 +1,202 @@
-const { setProfile } = require("../memory/profile");
+const { setProfile, getProfile } = require("../memory/profile");
+
+function addUniqueToArray(key, value) {
+  const current = getProfile(key);
+
+  let list = Array.isArray(current) ? current : [];
+
+  if (!list.some(item => item.toLowerCase() === value.toLowerCase())) {
+    list.push(value);
+    setProfile(key, list);
+    return true;
+  }
+
+  return false;
+}
 
 function extractMemory(message) {
+
   console.log("=== MEMORY EXTRACTOR ACTIF ===");
   console.log("EXTRACTEUR RECU :", message);
 
-  if (!message || typeof message !== "string") {
-    return null;
-  }
-
   const text = message.trim();
+  const lower = text.toLowerCase();
 
-  // =========================
+  // ==========================================
   // NOM
-  // =========================
+  // ==========================================
 
   const nameMatch = text.match(
-    /(?:je\s+)?m['’]?appelle\s+(.+)/i
+    /(?:je\s+m['’]appelle|mon\s+nom\s+(?:est|c['’]est)|appelle[-\s]?moi|tu\s+peux\s+m['’]appeler)\s+(.+)/i
   );
 
   if (nameMatch) {
+
     const name = nameMatch[1].trim();
 
-    if (name && !name.toLowerCase().includes("comment")) {
+    if (name) {
+
       setProfile("name", name);
+
+      addUniqueToArray("names", name);
 
       console.log("NOM ENREGISTRE :", name);
 
-      return {
-        type: "name",
-        value: name
-      };
+      return "name";
     }
   }
 
-  // =========================
+  // ==========================================
   // PROJET
-  // =========================
+  // ==========================================
 
   const projectMatch = text.match(
-    /mon\s+projet\s+(?:est|c'est)\s+(.+)/i
+    /mon\s+projet\s+(?:est|c['’]est)\s+(.+)/i
   );
 
   if (projectMatch) {
+
     const project = projectMatch[1].trim();
 
     if (project) {
+
       setProfile("project", project);
 
       console.log("PROJET ENREGISTRE :", project);
 
-      return {
-        type: "project",
-        value: project
-      };
+      return "project";
     }
   }
 
-  // =========================
+  // ==========================================
   // OBJECTIF
-  // =========================
+  // ==========================================
 
-  const objectiveMatch = text.match(
-  /mon\s+objectif\s+(?:est|c'est)\s+(?:de\s+)?(.+)/i
-);
-  if (objectiveMatch) {
-    const objectif = objectiveMatch[1].trim();
+  const objectifMatch = text.match(
+    /mon\s+objectif\s+(?:est|c['’]est)\s+(.+)/i
+  );
+
+  if (objectifMatch) {
+
+    const objectif = objectifMatch[1].trim();
 
     if (objectif) {
+
       setProfile("objectif", objectif);
 
       console.log("OBJECTIF ENREGISTRE :", objectif);
 
-      return {
-        type: "objectif",
-        value: objectif
-      };
+      return "objectif";
     }
   }
 
-  // =========================
+  // ==========================================
   // ETUDES
-  // =========================
+  // ==========================================
 
-  const studiesMatch = text.match(
-    /(?:j['’]étudie(?:\s+en)?|je\s+fais\s+des\s+études(?:\s+en)?)\s+(.+)/i
+  const studyMatch = text.match(
+    /(?:j['’]étudie|j['’]etudie)\s+(?:en\s+)?(.+)/i
   );
 
-  if (studiesMatch) {
-    const studies = studiesMatch[1].trim();
+  if (studyMatch) {
+
+    const studies = studyMatch[1].trim();
 
     if (studies) {
+
       setProfile("studies", studies);
 
       console.log("ETUDES ENREGISTREES :", studies);
 
-      return {
-        type: "studies",
-        value: studies
-      };
+      return "studies";
     }
   }
 
-  // =========================
+  const studyMatch2 = text.match(
+    /je\s+fais\s+des\s+(?:études|etudes)\s+(?:en\s+)?(.+)/i
+  );
+
+  if (studyMatch2) {
+
+    const studies = studyMatch2[1].trim();
+
+    if (studies) {
+
+      setProfile("studies", studies);
+
+      console.log("ETUDES ENREGISTREES :", studies);
+
+      return "studies";
+    }
+  }
+
+  // ==========================================
   // COMPETENCES
-  // =========================
+  // ==========================================
 
   const skillsMatch = text.match(
-    /(?:mes\s+compétences\s+sont|mes\s+competences\s+sont|je\s+sais|je\s+maîtrise|je\s+maitrise)\s+(.+)/i
+    /(?:mes\s+compétences|mes\s+competences)\s+(?:sont|:)\s*(.+)/i
   );
 
   if (skillsMatch) {
+
     const skills = skillsMatch[1].trim();
 
     if (skills) {
+
       setProfile("skills", skills);
 
       console.log("COMPETENCES ENREGISTREES :", skills);
 
-      return {
-        type: "skills",
-        value: skills
-      };
+      return "skills";
     }
   }
 
-  // =========================
+  const knowMatch = text.match(
+    /je\s+(?:sais|maîtrise|maitrise)\s+(.+)/i
+  );
+
+  if (knowMatch) {
+
+    const skills = knowMatch[1].trim();
+
+    if (skills) {
+
+      setProfile("skills", skills);
+
+      console.log("COMPETENCES ENREGISTREES :", skills);
+
+      return "skills";
+    }
+  }
+
+  // ==========================================
   // PREFERENCES
-  // =========================
+  // ==========================================
 
   const preferenceMatch = text.match(
-    /j['’]aime(?:\s+bien)?\s+(.+)/i
+    /j['’]aime\s+(?:bien\s+)?(.+)/i
   );
 
   if (preferenceMatch) {
+
     const preference = preferenceMatch[1].trim();
 
     if (preference) {
-      const profile = require("../memory/profile").getFullProfile();
 
-      const preferences = Array.isArray(profile.preferences)
-        ? profile.preferences
-        : [];
+      const added = addUniqueToArray(
+        "preferences",
+        preference
+      );
 
-      if (!preferences.includes(preference)) {
-        preferences.push(preference);
-      }
+      console.log(
+        added
+          ? "PREFERENCE AJOUTEE :"
+          : "PREFERENCE DEJA CONNUE :",
+        preference
+      );
 
-      setProfile("preferences", preferences);
-
-      console.log("PREFERENCE ENREGISTREE :", preference);
-
-      return {
-        type: "preference",
-        value: preference
-      };
+      return "preferences";
     }
   }
 
